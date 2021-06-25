@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
+  /* font-family: "Times New Roman", Times, serif; */
   /* border: 2px solid red; */
 }
 body {
@@ -12,6 +12,9 @@ body {
   /* height: 100vh; */
 }
 
+.fa {
+  /* font-family: "c"; */
+}
 /* *******************Utiliy Classes******************* */
 
 .r1 {
