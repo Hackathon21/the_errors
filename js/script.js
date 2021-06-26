@@ -1,3 +1,4 @@
+console.log("working");
 function myFunction() {
   var a = document.getElementById("mais");
   console.log(a);
@@ -6,9 +7,7 @@ function myFunction() {
     a.style.display = "block";
     // console.log(a.style.display);
   } else {
-    // console.log(a.style.display);
     a.style.display = "none";
-    // console.log(a.style.display);
   }
 }
 

@@ -47,7 +47,7 @@
                     <ul class="d-flex flex-row navbar-nav navlist" id="navl" style="display:none;">
                       <li class="nav-item"><a href="./index.html" class="nav-link " id="navli"><i class="fa fa-home" aria-hidden="true"></i>
                         Home</a></li>
-                      <li class="nav-item nav-ml"><a href="./stats.html" class="nav-link " id="navli"><i class="fa fa-line-chart" aria-hidden="true"></i>
+                      <li class="nav-item nav-ml"><a href=".stats.html" class="nav-link " id="navli"><i class="fa fa-line-chart" aria-hidden="true"></i>
                         Stats</a></li>
                       <li class="nav-item nav-ml"><a href="./aimetertainment.html" class="nav-link " id="navli"><i class="fa fa-gamepad" aria-hidden="true"></i>
                         Aimertainment</a></li>
@@ -62,22 +62,22 @@
                 
                 <div class="mai" id="mais">
                 <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-                  <a href="./index.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-home" aria-hidden="true"></i>
+                  <a href="#" class="nav-link text-muted" id="navli"><h6><i class="fa fa-home" aria-hidden="true"></i>
                     Home</h6></a>
                 </div>
                 <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-                  <a href="./stats.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-line-chart" aria-hidden="true"></i>Stats</h6></a>
+                  <a href="#" class="nav-link text-muted" id="navli"><h6><i class="fa fa-line-chart" aria-hidden="true"></i>Stats</h6></a>
                 </div>
                 <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-                  <a href="./aimetertainment.html" class="nav-link text-muted" id="openli"><h6 id="openli"><i class="fa fa-gamepad" aria-hidden="true"></i>
+                  <a href="#" class="nav-link text-muted" id="openli"><h6 id="openli"><i class="fa fa-gamepad" aria-hidden="true"></i>
                     Aimertainment</h6></a>
                 </div>
                 <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-                  <a href="./doctors.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-user-md" aria-hidden="true"></i>
+                  <a href="#" class="nav-link text-muted" id="navli"><h6><i class="fa fa-user-md" aria-hidden="true"></i>
                     Doctor</h6></a>
                 </div>
                 <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-                  <a href="./stats.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-medkit" aria-hidden="true" ></i>
+                  <a href="#" class="nav-link text-muted" id="navli"><h6><i class="fa fa-medkit" aria-hidden="true" ></i>
                     Book Slot</h6></a>
                 </div>
                 </div>
@@ -89,59 +89,66 @@
                 </div>
                 <div class="mainform-box">
                     <h2 class="event-name text-center p-2">Book Your Bed</h2>
-                    <form class="form">
+                    <form id="myForm" class="form" method="POST">
                         <div class="input p-1 m-1" >
                             <span class="text">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <span class="line"></span> 
-                            <input type="text" name="section" required="required" >
+                            <input type="text" id="userName" name="section" required="required" >
                         </div>
                         <div class="input p-1 m-1">
                             <span class="text">Id Proof:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <!-- <span class="line"></span> -->
-                            <input type="text" name="idproof" required="required" list="idproof" id="idproof">
+			<select id="idproof" name="idproof" required>
+                        <option value="" disabled selected>Select Id Type</option>
+			<option value="AadharCard">Aadhar Card</option>
+			<option value="PanCard">PAN Card</option>
+			<option value="DrivingLiscence">Driving Liscence</option>
+			<option value="Passport">Passport</option>
+			<option value="VoterId">Voter Id</option>
+				</select>
                         </div>
                         <div class="input p-1 m-1">
-                            <span class="text">Id proof no. </span>
+                            <span class="text">Id Proof No:</span>
                             <!-- <span class="line"></span> -->
-                            <input type="text" name="rollno" required="required">
+                            <input type="text" id="idproofno" name="idProofNo" required="required">
                         </div>
                         
                         <div class="input p-1 m-1">
                             <span class="text">MOBILE No:</span>
                             <!-- <span class="line"></span> -->
-                            <input type="text" name="number" required="required" value="+91 ">
+                            <input type="text" id="phoneNumber" name="number" required="required" value="+91 ">
                         </div>
                         <div class="input p-1 m-1">
                             <span class="text">E-mail ID:&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <!-- <span class="line"></span> -->
-                            <input type="email" name="E-MAIL" required="required">
+                            <input type="email" id="userEmail" name="E-MAIL" required="required">
                         </div>
                         
                         <div class="input p-1 m-1 radio-input">
                         <label for="Branch">Bed Type: &nbsp;&nbsp;</label>
-                            <div class="grid-radio  grid-col-2">
+                            <div class="grid-radio  grid-col-2" id="bed">
                                 <div class="radio-box">
-                                    <input type="checkbox" name="Branch">
-                                    <label for="CSE">ABC DHL</label>
+                                    <input type="checkbox" name="Branch" value="Ventilator">
+                                    <label for="CSE">Ventilater</label>
                                 </div>
                                 <div class="radio-box">
-                                    <input type="checkbox" name="Branch">
-                                    <label for="CSE(DS)">FGH GHZ</label>
+                                    <input type="checkbox" name="Branch" value="ICU">
+                                    <label for="CSE(DS)">ICU</label>
                                 </div>
                                 <div class="radio-box">
-                                    <input type="checkbox" name="Branch">
-                                    <label for="CSE(AI & ML)">PQR DHL   </label>
+                                    <input type="checkbox" name="Branch" value="With Oxygen">
+                                    <label for="CSE(AI & ML)">With Oxygen</label>
                                 </div>
                                 <div class="radio-box">
-                                    <input type="checkbox" name="Branch">
+                                    <input type="checkbox" name="Branch" value="radio-box">
                                     <label for="IT">Without Oxygen</label>
                                 </div>
                                 <!-- <div class="radio-box">
-                                    <input type="radio" name="Branch">
+                                    <input type="radio" name="Branch" value="ECE">
                                     <label for="ECE">ECE</label>
                                 </div>
                                 <div class="radio-box">
-                                    <input type="radio" name="Branch">
+                                    <input type="radio" name="Branch" value="EN">
                                     <label for="EN">EN</label>
                                 </div>    -->
                             </div>
@@ -149,36 +156,33 @@
 
                         <div class="input p-1 m-1 radio-input">
                             <label for="Year">Hospital:</label>
-                            <div class="grid-radio ml-3 grid-col-3 year">
+                            <div class="grid-radio ml-3 grid-col-3 year" id="hospital">
                                 <div class="radio-box">
-                                    <input type="radio" id="1" name="Year" value="1st">
+                                    <input type="radio" id="1" name="Year" value="ABC Delhi">
                                     <label for="male">ABC Dehli</label>
                                 </div>
                                 <div class="radio-box">
-                                    <input type="radio" id="2" name="Year" value="2nd">
+                                    <input type="radio" id="2" name="Year" value="PQR Ghz">
                                     <label for="female">PQR Ghz</label>
                                 </div>
                                 
                                 <div class="radio-box">
-                                    <input type="radio" id="3" name="Year" value="3rd">
+                                    <input type="radio" id="3" name="Year" value="XYZ Delhi">
                                     <label for="3 year">XYZ Dehli</label>
                                 </div>
-                                <!-- <div class="radio-box">
-                                    <input type="radio" id="4" name="Year" value="4th">
-                                    <label for="4 year">4TH Year</label>
-                                </div>  -->
 
                             </div>
                         </div>
                         <div class="input p-1 m-1 submit-box d-flex justify-content-center m-2 p-1 mt-4">
-                            <input type="submit" name="submt" class="submit">
+                            <input type="submit" onclick="submitData()" name="submt" class="submit">
                         </div>
                         
                         <!-- <div class="input submit-box d-flex m-2 p-1 mt-4" style="width: 25vw; float: right;">   
-                            <button class="submit">Next&gt;&gt;</button>
+                            <button  class="submit">Next&gt;&gt;</button>
                         </div> -->
                     </form>
-
+		<!-- <div class="alert alert-success" id="result" role="alert">
+</div> -->
                 </div>
             </div>
             
@@ -224,5 +228,7 @@
     <script src="./js/script-form.js"></script>
     <!-- <script src="./particle.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/submitForm.js"></script>
 </body>
 </html>

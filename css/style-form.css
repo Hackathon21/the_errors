@@ -130,6 +130,21 @@ input[type="text"]:focus {
   color: #0629ee;
 }
 
+select {
+  width: 70%;
+  border: 3px solid #3dd4f8;
+  color: #0629ee;
+  border-radius: 4px;
+}
+
+select:focus {
+  /* width: 100%; */
+  display: inline-block;
+  border: 4px double #0629ee;
+  border-radius: 4px;
+  color: #0629ee;
+}
+
 .radio-input {
   display: flex;
 }
