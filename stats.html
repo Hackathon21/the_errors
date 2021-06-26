@@ -13,6 +13,27 @@
     <link rel="shortcut icon" href="./src/w-covid.gif" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/stats.css">
+    <link rel="stylesheet" href="./css/bed.css">
+    <link rel="stylesheet" href="./css/vaccine.css">
+
+
+    <!-- LEAFLET library links for accessing the Global L namespace through other scripts below it -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=     ="crossorigin="">
+    </script>
+
+    <!-- My JS linked File -->
+    <script defer src="./js/bed.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TD2EHC7LN"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-2TD2EHC7LN');
+	</script>
     <style>
         #chartdiv {
         max-width: 100%;
@@ -111,16 +132,189 @@
         </a>
     </div>
 
-    <div id="statssec-1 animate__animated animate__slideInUp animate__delay-2s">
+    <div id="statssec-1 " class="animate__animated animate__slideInUp animate__delay-2s">
     <div id="chartdiv" class="data r1"></div>
     </div>
 
-    <div id="statssec-2 animate__animated animate__backInUp">
-    <div id="chartdi" class="data r1"></div>
+    <div id="statssec-2 " class="animate__animated animate__backInUp ">
+    <div id="chartdi" class="data r1 bg-light">
+      <section class="userBeds">
+        <div class="userBeds__avail">
+            <!-- <p class="userBeds--info">Currently Total Number of beds Available in ${city} in  country ${country} are ${dataofbedsby random number}</p>
+             -->
+             
+        </div>
+
+        <!-- In Below container Map will be displayed -->
+        <div id="map">
+
+        </div>
+      </section>
+    </div>
     </div>
 
     <div id="statssec-3 animate__animated animate__backInUp">
-    <div id="chartdi" class="data r1"></div>
+    <div id="chartdi" class="data r1">
+      <div class="container mt-5 card1">
+	
+        <h4 class="text-center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:32px; color:white;">Vaccine Booking</h4>
+      <div class="row">
+      <div class="col-12">
+      <div class="container   mt-5 pt-4">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-5">
+        
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text" for="district-input">District</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="text" class="form-control" list="district" id="district-input" placeholder="Type to search...">
+          </div>
+          <datalist id="district"></datalist>
+        
+      </div>
+        
+        <div class="col-4">
+        
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text" for="pincode-input">Pincodes</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="text" class="form-control" id="pincode-input" placeholder="Comma separated...">
+            <button style="color:#ff821ce6; " type="button" class="btn btn-dark" data-bs-toggle="popover" title="How does this work?" data-bs-content="If you leave this empty, you can get booked for any centers available in your district. If you only want to book from centers in specific picodes, you can enter them here.">?</button>
+          </div>
+        </div>
+        
+        </div>
+        <div class="row mt-4">
+          <div class="col-1"></div>
+          <div class="col-5">
+        
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text">Age</label>
+            <input style="color:steelblue; background:white; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="a-18" name="age" value="a-18" class="btn-check" checked><label for="a-18" class="btn btn-outline-dark">18+</label>
+            <input style="color:steelblue; background:white; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="a-45" name="age" value="a-45" class="btn-check"><label for="a-45" class="btn btn-outline-dark">45+</label>
+          </div>
+        
+        </div>
+          
+          <div class="col-4">
+        
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text">Dose</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="d-1" name="dose" value="d-1" class="btn-check" checked><label for="d-1" class="btn btn-outline-dark">1st</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="d-2" name="dose" value="d-2" class="btn-check"><label for="d-2" class="btn btn-outline-dark">2nd</label>
+          </div>
+        </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-1"></div>
+          <div class="col-5">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text">Vaccine</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="v-any" name="vaccine" value="v-any" class="btn-check" checked><label for="v-any" id="v-any-label" class="btn btn-outline-dark">Any</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="v-covishield" name="vaccine" value="v-covishield" class="btn-check"><label for="v-covishield" class="btn btn-outline-dark">Covishield</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="v-covaxin" name="vaccine" value="v-covaxin" class="btn-check"><label for="v-covaxin" class="btn btn-outline-dark">Covaxin</label>
+            <input style="color:steelblue; border-style:solid; border-width:2px; border-color:#ff821ce6;" type="radio" id="v-sputnik-v" name="vaccine" value="v-sputnik-v" class="btn-check"><label for="v-sputnik-v" class="btn btn-outline-dark">Sputnik V</label>
+          </div>
+        </div>
+          <div class="col-4 ">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text">Fees</label>
+            <input type="radio" id="f-free" name="fees" value="f-free" class="btn-check" checked><label for="f-free" class="btn btn-outline-dark">Free</label>
+            <input type="radio" id="f-paid" name="fees" value="f-paid" class="btn-check"><label for="f-paid" class="btn btn-outline-dark">Paid</label>
+            <input type="radio" id="f-any" name="fees" value="f-any" class="btn-check"><label for="f-any" class="btn btn-outline-dark">Any</label>
+          </div>
+        </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-1"></div>
+          <div class="col-5">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text" for="date">Date</label>
+            <input type="date" id="date" class="form-control">
+          </div>
+        </div>
+        </div>
+          
+      </div>
+    
+      <div class="container pt-4">
+        <div class="row pb-1" id="mobile-div">
+          <div class="col-1"></div>
+          <div class="col-5">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" for="mobile" class="input-group-text">Login</label>
+            <input type="number" id="mobile" class="form-control" placeholder="Enter 10 digit mobile...">
+            <input type="button" class="btn btn-outline-dark" id="get-otp" value="Get OTP">
+          </div>
+        </div>
+          <div class="col-4" id="otp-div">
+          
+          <div class="input-group">
+            <label for="otp" class="input-group-text">OTP</label>
+            <input type="number" id="otp" class="form-control" placeholder="Enter OTP..." autocomplete="off">
+            <input type="button" class="btn btn-outline-dark" id="confirm-otp" value="Login">
+          </div>
+        </div>
+        </div>
+        <div  class="row mt-4">
+          <div class="col-1"></div>
+        <div class="col-5" id="login-div">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text">Logged In</label>
+            <button class="btn btn-secondary" id="expiring">session expiring soon</button>
+            <input type="button" class="btn btn-outline-dark" id="relogin" value="Relogin">
+          </div>
+        </div>
+        <div class="col-4" id="ben-div">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text">Beneficiaries</label>
+            <button id="ben" value="ben" class="btn btn-secondary">Neel Patel</button>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-1"></div>
+        <div class="col-5" id="logout-div">
+          <div class="input-group">
+            <input type="button" class="btn btn-outline-dark" id="logout" value="Logout">
+          </div>
+        </div>
+      </div>
+      <div class="container  pt-4">
+        <div class="row">
+          <div class="col-1"></div>
+        <div class="col-5" id="fetch-div">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text" id="fetch-label">Fetch Available Slots</label>
+            <input type="button" class="btn btn-outline-dark" id="start-fetch" value="Start">
+          </div>
+        </div>
+        <div class="col-4" id="fetching-div">
+          <div class="input-group">
+            <label style="color:#ff821ce6; background:black; border-width:2px; border-color:#ff821ce6; border-style:solid;" class="input-group-text" id="fetching-label">Fetching Slots</label>
+            <input type="button" class="btn btn-outline-dark" id="stop-fetch" value="Stop">
+          </div>
+        </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-1"></div>
+        <div class="col-5" id="captcha-div">
+          <div class="input-group">
+            <label class="input-group-text" for="captcha-input">Captcha</label>
+            <div id="captcha" style="border: 1px solid darkgray"></div>
+            <input type="text" id="captcha-input" class="form-control" placeholder="Enter captcha..." autocomplete="off">
+            <input type="button" class="btn btn-outline-dark" id="book" value="Book">
+          </div>
+        </div>
+        </div>
+      </div>
+    
+      <div id="booking-div" class="container pt-3"></div>
+      <div id="results" class="container pt-3" style="padding:6%;"></div>
+      
+      </div>
+      </div>
+    </div>
+    </div>
     </div> 
 
     <footer class="footer bg-black text-white">
@@ -173,7 +367,15 @@
   <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
   <script src="./js/stats-cases.js"></script>
 
+<!-- ***************************vaccine*************************** -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
+<script src="./js/districts.js"></script>
+<script src="./js/init.js"></script>
+<script src="./js/vaccine.js"></script>
 
 
 
