@@ -1,0 +1,54 @@
+.backg {
+  background: linear-gradient(
+      135deg,
+      rgba(240, 77, 104, 0.234),
+      rgba(120, 120, 225, 0.323)
+    ),
+    url("../src/wepik-2021524-114832.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center center;
+  /* border: 2px solid salmon; */
+}
+
+.mainbody {
+  background-color: #497aeca4;
+  /* box-shadow: 3px 5px 20px 10px rgb(226, 111, 111); */
+  width: 90vw;
+  height: 80vh;
+  border: 3px solid rgb(235, 101, 101);
+}
+
+.bordercard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  /* width: 90vw; */
+}
+
+.card {
+  width: 350px;
+  /* height: 30vh; */
+  background-color: rgb(17, 17, 17);
+  /* padd; */
+}
+
+.cardimg {
+  /* width: 80%; */
+  margin-bottom: 5px;
+  width: 250px;
+  height: 250px;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 1px 3px 10px 1px rgb(46, 105, 216);
+}
+
+.hcard {
+  color: slateblue;
+  text-shadow: 1px 1px indianred;
+}

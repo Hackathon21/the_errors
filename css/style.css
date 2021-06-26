@@ -12,9 +12,6 @@ body {
   /* height: 100vh; */
 }
 
-.fa {
-  /* font-family: "c"; */
-}
 /* *******************Utiliy Classes******************* */
 
 .r1 {
@@ -89,8 +86,8 @@ body {
   /* border: 2px solid greenyellow; */
 }
 
-.nav-item {
-  margin-left: 25px;
+.nav-ml {
+  margin-left: 50px;
 }
 
 nav + .mai {
@@ -174,3 +171,8 @@ footer > div > h3:hover {
 /* visibility: hidden; */
 /* border: red solid 2px; */
 /* } */
+
+/* Changing Color Of Navigation on Scroll */
+.color__set {
+  background-color: #0a0a0a;
+}
