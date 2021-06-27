@@ -1,25 +1,41 @@
-.backg {
+body {
   background: linear-gradient(
       135deg,
-      rgba(240, 77, 104, 0.234),
-      rgba(120, 120, 225, 0.323)
+      rgba(240, 77, 104, 0.1),
+      rgba(120, 120, 225, 0.1)
     ),
     url("../src/wepik-2021524-114832.png");
+  display: grid;
+  place-content: center;
+  place-items: center;
+  /* height: 100vh; */
+  min-height: 100vh;
+}
+.backg {
+  /*background: linear-gradient(
+      135deg,
+      rgba(240, 77, 104, 0.193),
+      rgba(120, 120, 225, 0.2)
+    ),
+    url("../src/wepik-2021524-114832.png"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
+  height: auto;
+
   display: grid;
   place-content: center center;
   /* border: 2px solid salmon; */
 }
 
 .mainbody {
-  background-color: #204bb1a4;
+  background-color: #204cb16b;
   /* padding: ; */
   /* box-shadow: 3px 5px 20px 10px rgb(226, 111, 111); */
-  width: 90vw;
+  width: 95vw;
+
   /* min-height: 80vh; */
   border: 3px solid rgb(235, 101, 101);
 }
@@ -34,7 +50,7 @@
 
 .card {
   text-decoration: none;
-  width: 350px;
+  width: 300px;
   /* height: 30vh; */
   background-color: rgb(17, 17, 17);
   /* padd; */

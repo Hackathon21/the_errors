@@ -32,6 +32,7 @@
       .data{
         border: 2px solid #ffb379;
         width: 90vw;
+        height: inherit;
         margin: 10vh auto;
         box-shadow: 1px 1px 10px 3px #ff7704;
       }
@@ -49,6 +50,8 @@
         preload.style.display = "none";
       }
   </script>
+
+
     <div class="fullnav rounded" style="z-index: 200;">
       <nav class="navbar navbar-dark  p-2 px-4 mx-auto container-fluid" id="nav">
         <div class="">
@@ -60,7 +63,7 @@
         </button>
         <div id="m">
           <ul class="d-flex flex-row navbar-nav navlist" id="navl" style="display:none;">
-            <li class="nav-item"><a href="./index.html" class="nav-link " id="navli"><i class="fa fa-home" aria-hidden="true"></i>
+            <li class="nav-item"><a href="./index.html" class="nav-link" id="navli"><i class="fa fa-home" aria-hidden="true"></i>
               Home</a></li>
             <li class="nav-item nav-ml"><a href="./stats.html" class="nav-link " id="openli"><i class="fa fa-line-chart" aria-hidden="true"></i>
               Stats</a></li>
@@ -68,7 +71,7 @@
               Aimertainment</a></li>
             <li class="nav-item nav-ml"><a href="./doctors.html" class="nav-link " id="navli"><i class="fa fa-user-md" aria-hidden="true"></i>
               Doctors</a></li>
-            <li class="nav-item nav-ml"><a href="./stats.html" class="nav-link " id="navli"><i class="fa fa-medkit" aria-hidden="true"></i>
+            <li class="nav-item nav-ml"><a href="./stats.html#statssec-3" class="nav-link" id="navli"><i class="fa fa-medkit" aria-hidden="true"></i>
               Book slot</a></li>
             
           </ul>
@@ -77,22 +80,22 @@
       
       <div class="mai" id="mais">
       <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-        <a href="./index.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-home" aria-hidden="true"></i>
+        <a href="./index.html" class="nav-link text-muted" id="navli"><h6 id="navli"><i class="fa fa-home" aria-hidden="true"></i>
           Home</h6></a>
       </div>
       <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
         <a href="./stats.html" class="nav-link text-muted" id="openli"><h6 id="openli"><i class="fa fa-line-chart" aria-hidden="true"></i>Stats</h6></a>
       </div>
       <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-        <a href="./aimetertainment.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-gamepad" aria-hidden="true"></i>
+        <a href="./aimetertainment.html" class="nav-link text-muted" id="navli"><h6 id="navli"><i class="fa fa-gamepad" aria-hidden="true"></i>
           Aimertainment</h6></a>
       </div>
       <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-        <a href="./doctors.html" class="nav-link text-muted" id="navli"><h6><i class="fa fa-user-md" aria-hidden="true"></i>
+        <a href="./doctors.html" class="nav-link text-muted" id="navli"><h6 id="navli"><i class="fa fa-user-md" aria-hidden="true"></i>
           Doctor</h6></a>
       </div>
       <div class="navbar p-2 mx-auto container-fluid onclicknav nav-item mt-1 center d-flex justify-content-center" id="nav">
-        <a href="./" class="nav-link text-muted" id="navli"><h6><i class="fa fa-medkit" aria-hidden="true" ></i>
+        <a href="./stats.html#statssec-3" class="nav-link text-muted" id="navli"><h6 id="navli"><i class="fa fa-medkit" aria-hidden="true" ></i>
           Book Slot</h6></a>
       </div>
       </div>
@@ -120,31 +123,25 @@
         </a>
     </div>
 
-    <div id="statssec-1 " class="animate__animated animate__slideInUp animate__delay-2s">
+    <div id="statssec-1" class="animate__animated animate__slideInUp animate__delay-2s">
     <div id="chartdiv" class="data r1"></div>
     </div>
 
-    <div id="statssec-2 " class="animate__animated animate__backInUp ">
-    <div id="chartdi" class="data r1 bg-light">
-      <section class="userBeds">
-        <div class="userBeds__avail">
-            <!-- <p class="userBeds--info">Currently Total Number of beds Available in ${city} in  country ${country} are ${dataofbedsby random number}</p>
-             -->
-             
-        </div>
-
+    <div id="statssec-2" class="animate__animated animate__backInUp animate__delay-2s">
+    <div class="data r1 bg-dark p-3" style="height: auto;">
+      <h2 class="text-white text-center m-1">Bed available in your area</h2>
+      <section class="userBeds d-flex flex-wrap-reverse align-items-center justify-content-around mx-auto" style="width: 80vw ; height: fit-content;">
+        <!-- This div will show how many beds available -->
+        <div class="userBeds__avail text-white m-1 d-flex flex-column justify-content-center align-items-around r1" style="width: 300px; font-size: larger;"></div>
         <!-- In Below container Map will be displayed -->
-        <div id="map">
-
-        </div>
+        <div id="map" style="width: 60%; height: 300px;" class="border border-light my-3"></div>
       </section>
-
     </div>
     </div>
 
-    <div id="statssec-3 animate__animated animate__backInUp">
-    <div id="chartdi" class="data r1">
-      <div class="container mt-5 card1">
+    <div id="statssec-3" class="animate__animated animate__backInUp animate__delay-2s">
+    <div id="chartdi" class="data r1" style="height: auto;">
+      <div class="container m-5 pt-3 card1">
 	
         <h4 class="text-center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:32px; color:white;">Vaccine Booking</h4>
       <div class="row">
@@ -305,6 +302,7 @@
     </div>
     </div>
     </div> 
+    </div>
 
     <footer class="footer bg-black text-white">
         <div class="footersec1 d-flex justify-content-around flex-wrap p-3">
@@ -313,19 +311,19 @@
             <div><p>This is a website, where people will Get updated info of covid 19 cases , consult doctor also can find solution of bordem in lockdown etc. For more details you can visit "MInistry of Health and Family Welfare Department" <a href="https://www.mohfw.gov.in/">Click&nbsp;here </a></p></div>
           </div>
           <div class="m-3" style="width: 200px;">
-            <h5> Team The_Errors</h5>
-            <div>Piyush Gaur</div>
-            <div>Priyansh</div>
-            <div>Radhika Garg</div>
-            <div>Rajat Gupta</div>
+            <h5>Team The_Errors</h5>
+            <div><a href="https://www.instagram.com/piyushgaur26/"> Piyush Gaur </a></div>
+            <div><a href="https://www.instagram.com/priyansh_kulshrestha/"> Priyansh </a></div>
+            <div><a href="https://www.instagram.com/radhikagarg704/"> Radhika Garg </a></div>
+            <div><a href="https://www.instagram.com/rajatgupta__25/"> Rajat Gupta </a></div>
           </div>
           <div class="m-3" style="width: 200px;">
             <h5>Quick Links</h5>
-            <div><a href="#">Contact Doctors</a></div>
-            <div><a href="#">Vaccination</a></div>
-            <div><a href="#">Cure</a></div>
-            <div><a href="#">Lorem </a></div>
-            <div><a href="#">Lorem ipsum</a></div>
+            <div><a href="./stats.html#statssec-3">Vaccination</a></div>
+            <div><a href="./doctors.html">Contact Doctors</a></div>
+            <div><a href="./form.html">book bed</a></div>
+            <div><a href="./aimetertainment.html">Aimertainment</a></div>
+            <div><a href="./index.html#symptoms">Symptoms</a></div>
           </div>
           <div class="m-3" style="width: 200px;">
             <h5>Govt. Sites</h5>
